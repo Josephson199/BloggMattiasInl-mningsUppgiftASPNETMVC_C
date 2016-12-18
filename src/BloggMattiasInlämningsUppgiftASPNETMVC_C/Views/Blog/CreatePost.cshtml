@@ -1,0 +1,34 @@
+﻿@model BloggMattiasInlämningsUppgiftASPNETMVC_C.Models.CreatePostViewModel
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4 id="headerText">Create Post</h4>
+                </div>
+                    <div class="panel-body">
+                     
+                    <form asp-controller="Blog" asp-action="CreatePost" method="post">
+                        <div asp-validation-summary="All"></div>
+                        <div class="form-group">
+                            <input placeholder="Headline.." class="form-control input-lg" asp-for="@Model.BlogPost.HeadLine" />
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Text.." class="form-control input-lg" rows="10" asp-for="@Model.BlogPost.TextBody"></textarea>
+                        </div>
+                        <div class="form-group pull-right">
+                            <select id="selectCategory" class="form-control" asp-for="@Model.BlogPost.CategoryId">
+                                @foreach (var item in Model.CategoryList)
+                                {
+                                    <option value="@item.Id">@item.CategoryName</option>
+                                }
+                            </select>
+                        </div>
+                        <input id="subBtn" class="btn btn-primary" type="Submit" value="Submit" />
+                    </form>
+                </div>
+            </div>
+       </div>
+   </div>
+</div>

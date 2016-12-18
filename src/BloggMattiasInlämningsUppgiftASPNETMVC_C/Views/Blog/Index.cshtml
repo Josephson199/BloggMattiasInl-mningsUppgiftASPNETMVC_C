@@ -1,0 +1,104 @@
+﻿@model BloggMattiasInlämningsUppgiftASPNETMVC_C.Models.IndexViewModel
+
+
+
+
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+        <!-- Blog Post Content Column -->
+        <div class="col-lg-8">
+
+            @{
+                foreach (var item in Model.BlogPostList)
+                {
+
+                <!-- Blog Post -->
+                <!-- Title -->
+                    <h1>@item.HeadLine</h1>
+
+                <!-- Author -->
+                    <p class="lead">
+                        by <a href="#">Mattias Josephsson</a>
+                    </p>
+
+                    <hr>
+
+                <!-- Date/Time -->
+                    <p id="DateAndCateSpan"><span class="glyphicon glyphicon-time"></span> Posted @item.CreationDate.ToString() &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Category: @item.Category.CategoryName</p>
+
+                    <hr>
+
+                
+
+
+                <!--TEXT-->
+                    <div class="accordion">
+                        <h4 class="accordion-toggle">Read more..</h4>
+                        <div class="accordion-content default">
+                            <p>@item.TextBody</p>
+                        </div>
+                    </div>
+
+                        
+
+                        <hr id="bigHr">
+                        }
+                        }
+
+
+
+
+                    </div>
+
+
+        <!-- Blog Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+            <!-- Blog Search Well -->
+            <div class="well">
+
+                <h4>Blog Search</h4>
+
+                <div class="input-group">
+                    <form asp-controller="Blog" asp-action="Index" method="post">
+                        <input asp-for="SearchString" type="text" class="form-control">
+
+                        <input class="btn btn-default" type="submit" value="Search">
+
+                    </form>
+
+                </div>
+                <!-- /.input-group -->
+                <!-- Blog Categories Well -->
+                <div class="well">
+                    <h4>Blog Categories</h4>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <ul class="list-unstyled">
+                                @{
+                                    foreach (var category in Model.CategoryList)
+                                    {
+                                        <li>
+                                            <a asp-controller="Blog" asp-action="IndexCategoryResult"asp-route-categoryId="@category.Id">@category.CategoryName</a>
+                                        </li>
+                                    }
+
+                                }
+                            </ul>
+                        </div>
+                       
+                    </div>
+                    <!-- /.row -->
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
