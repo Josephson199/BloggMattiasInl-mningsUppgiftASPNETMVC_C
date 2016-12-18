@@ -65,3 +65,6 @@ textarea {
   #DateAndCateSpan {
       opacity: 0.7;
   }
+  #pWithLineBrake {
+      white-space: pre-wrap;
+  }
