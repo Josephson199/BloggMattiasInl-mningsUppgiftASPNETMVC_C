@@ -1,5 +1,8 @@
 ﻿// Write your Javascript code.
-
+$(document)
+    .ready(function ($) {
+        $('.accordion-content').slideUp("fast");
+    });
 
 
 $(document).ready(function ($) {
@@ -15,7 +18,3 @@ $(document).ready(function ($) {
 });
 
 
-$(document)
-    .ready(function($) {
-        $('.accordion-content').slideUp("fast");
-    });

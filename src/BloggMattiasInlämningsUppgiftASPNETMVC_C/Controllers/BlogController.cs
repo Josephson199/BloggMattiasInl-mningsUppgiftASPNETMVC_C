@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using BloggMattiasInlämningsUppgiftASPNETMVC_C.Models;
+using BloggMattiasInlämningsUppgiftASPNETMVC_C.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.DotNet.ProjectModel.Resources;
 
