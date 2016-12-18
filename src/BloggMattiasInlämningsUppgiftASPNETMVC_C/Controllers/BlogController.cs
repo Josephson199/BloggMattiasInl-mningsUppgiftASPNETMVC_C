@@ -7,6 +7,7 @@ using BloggMattiasInlämningsUppgiftASPNETMVC_C.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.DotNet.ProjectModel.Resources;
 
+
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace BloggMattiasInlämningsUppgiftASPNETMVC_C.Controllers
@@ -26,6 +27,7 @@ namespace BloggMattiasInlämningsUppgiftASPNETMVC_C.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+           
             var blogPostList = _context.BlogPost.ToList();
             var categoryList = _context.Category.ToList();
 
@@ -106,7 +108,7 @@ namespace BloggMattiasInlämningsUppgiftASPNETMVC_C.Controllers
 
                     _context.BlogPost.Add(model.BlogPost);
                     _context.SaveChanges();
-                    return Redirect("Index");
+                    return RedirectToAction("Index");
                 }
                 catch (Exception )//TODO Log exceptions
                 {

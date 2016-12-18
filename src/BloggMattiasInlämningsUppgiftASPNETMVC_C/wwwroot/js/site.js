@@ -1,7 +1,9 @@
 ﻿// Write your Javascript code.
 
+
+
 $(document).ready(function ($) {
-    $('.accordion').find('.accordion-toggle').click(function () {
+    $('.accordion').find('.accordion-toggle').on("click", function () {
 
         //Expand or collapse this panel
         $(this).next().slideToggle('fast');
@@ -11,3 +13,9 @@ $(document).ready(function ($) {
 
     });
 });
+
+
+$(document)
+    .ready(function($) {
+        $('.accordion-content').slideUp("fast");
+    });
