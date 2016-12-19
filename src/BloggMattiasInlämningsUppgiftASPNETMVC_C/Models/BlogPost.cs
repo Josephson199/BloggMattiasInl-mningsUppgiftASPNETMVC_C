@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.Extensions.FileProviders;
 
 namespace BloggMattiasInlämningsUppgiftASPNETMVC_C.Models
 {

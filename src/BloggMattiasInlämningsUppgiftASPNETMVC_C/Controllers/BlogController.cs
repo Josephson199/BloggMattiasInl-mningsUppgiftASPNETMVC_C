@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using BloggMattiasInlämningsUppgiftASPNETMVC_C.Models;
 using BloggMattiasInlämningsUppgiftASPNETMVC_C.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.DotNet.ProjectModel.Resources;
 
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
@@ -42,8 +38,10 @@ namespace BloggMattiasInlämningsUppgiftASPNETMVC_C.Controllers
 
             return View(model);
         }
+        
+       
         [HttpPost]
-        public IActionResult Index(IndexViewModel model)
+        public IActionResult IndexSearch(IndexViewModel model)
         {
             if (model.SearchString != null)
             {
@@ -60,11 +58,15 @@ namespace BloggMattiasInlämningsUppgiftASPNETMVC_C.Controllers
                 model.BlogPostList = blogPostList;
             }
 
-                 
-                model.CategoryList = _context.Category.ToList();
-                return View(model);
 
+            model.CategoryList = _context.Category.ToList();
+
+            return View("Index", model);
         }
+
+
+
+
         [HttpGet]
         public IActionResult IndexCategoryResult(int categoryId)
         {
@@ -113,8 +115,8 @@ namespace BloggMattiasInlämningsUppgiftASPNETMVC_C.Controllers
                 }
                 catch (Exception )//TODO Log exceptions
                 {
-                    var categoryList = _context.Category.ToList();
-                    model.CategoryList = categoryList;
+                    
+                    model.CategoryList = _context.Category.ToList();
                     return View(model);
                     
                 }
@@ -122,8 +124,8 @@ namespace BloggMattiasInlämningsUppgiftASPNETMVC_C.Controllers
             }
             else
             {
-                var categoryList = _context.Category.ToList();
-                model.CategoryList = categoryList;
+                 
+                model.CategoryList = _context.Category.ToList();
                 return View(model);
             }
         }

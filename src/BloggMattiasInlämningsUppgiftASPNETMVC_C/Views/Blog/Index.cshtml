@@ -1,5 +1,4 @@
-﻿@using BloggMattiasInlämningsUppgiftASPNETMVC_C.ViewModels
-@model BloggMattiasInlämningsUppgiftASPNETMVC_C.ViewModels.IndexViewModel
+﻿@model BloggMattiasInlämningsUppgiftASPNETMVC_C.ViewModels.IndexViewModel
 
 
 
@@ -65,7 +64,7 @@
                 <h4>Blog Search</h4>
 
                 <div class="input-group">
-                    <form asp-controller="Blog" asp-action="Index" method="post">
+                    <form asp-controller="Blog" asp-action="IndexSearch" method="post">
                         <input asp-for="SearchString" type="text" class="form-control">
 
                         <input class="btn btn-default" type="submit" value="Search">
