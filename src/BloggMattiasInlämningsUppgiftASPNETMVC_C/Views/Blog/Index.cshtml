@@ -3,14 +3,13 @@
 
 
 
-
 <!-- Page Content -->
 <div class="container">
 
-    <div class="row">
+    <div class="row" style="margin-top: 20px;">
 
         <!-- Blog Post Content Column -->
-        <div class="col-lg-8">
+        <div class="col-lg-9 well">
 
             @{
                 foreach (var item in Model.BlogPostList)
@@ -18,7 +17,7 @@
 
                 <!-- Blog Post -->
                 <!-- Title -->
-                    <h1>@item.HeadLine</h1>
+                    <h1 id="header">@item.HeadLine</h1>
 
                 <!-- Author -->
                     <p class="lead">
@@ -56,7 +55,7 @@
 
 
         <!-- Blog Sidebar Widgets Column -->
-        <div class="col-md-4">
+        <div class="col-md-3">
 
             <!-- Blog Search Well -->
             <div class="well">
