@@ -6,8 +6,15 @@
 <!-- Page Content -->
 <div class="container">
 
-    <div class="row" style="margin-top: 20px;">
+    <div class="row, myRows">
+        <div>
+            @if (!string.IsNullOrWhiteSpace(Model.SearchString))
+            {
+               <h4 id="searchResult">Search results for : @Model.SearchString</h4> 
+            }
+            
 
+        </div>
         <!-- Blog Post Content Column -->
         <div class="col-lg-9 well">
 
@@ -62,15 +69,17 @@
 
                 <h4>Blog Search</h4>
 
-                <div class="input-group">
-                    <form asp-controller="Blog" asp-action="IndexSearch" method="post">
+                
+                <form asp-controller="Blog" asp-action="IndexSearch" method="post">
+                    <div class="form-group">
                         <input asp-for="SearchString" type="text" class="form-control">
+                    </div>
+                        <div class="form-group">
+                            <input class="btn btn-primary" type="submit" value="Search">
+                        </div>
+</form>
 
-                        <input class="btn btn-default" type="submit" value="Search">
-
-                    </form>
-
-                </div>
+               
                 <!-- /.input-group -->
                 <!-- Blog Categories Well -->
                 <div class="well">

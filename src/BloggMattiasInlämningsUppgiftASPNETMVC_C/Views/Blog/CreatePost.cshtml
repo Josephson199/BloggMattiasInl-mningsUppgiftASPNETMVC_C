@@ -2,14 +2,14 @@
 @model BloggMattiasInlämningsUppgiftASPNETMVC_C.ViewModels.CreatePostViewModel
 
 <div class="container">
-    <div class="row">
+    <div class="row, myRows">
         <div class="col-lg-10">
             <div class="panel panel-primary">
-                <div class="panel-heading">
+                <div id="createPostPanelHeadingDiv" class="panel-heading">
                     <h4 id="headerText">Create Post</h4>
                 </div>
-                    <div class="panel-body">
-                     
+                <div class="panel-body">
+
                     <form asp-controller="Blog" asp-action="CreatePost" method="post">
                         <div asp-validation-summary="All"></div>
                         <div class="form-group">
@@ -30,6 +30,6 @@
                     </form>
                 </div>
             </div>
-       </div>
-   </div>
+        </div>
+    </div>
 </div>
